@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Name – Data Scientist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #161b22;
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom: 1px solid #30363d;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    header p {
+      margin-top: 8px;
+      color: #8b949e;
+      font-size: 18px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      border-left: 4px solid #58a6ff;
+      padding-left: 10px;
+      margin-top: 40px;
+      color: #58a6ff;
+      text-transform: uppercase;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+
+    .section {
+      margin-top: 20px;
+    }
+
+    .skills span,
+    .tags span {
+      display: inline-block;
+      background: #21262d;
+      padding: 6px 12px;
+      margin: 5px;
+      border-radius: 20px;
+      border: 1px solid #30363d;
+      font-size: 14px;
+    }
+
+    .experience-item {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .experience-item h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .experience-item .meta {
+      color: #8b949e;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      margin: 10px 0 0 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      color: #8b949e;
+      border-top: 1px solid #30363d;
+    }
+
+    /* Scroll to top button */
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #58a6ff;
+      color: #0d1117;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Your Name</h1>
+  <p>Data Scientist • Machine Learning • Analytics</p>
+  <p>Email: you@example.com | LinkedIn | GitHub</p>
+</header>
+
+<div class="container">
+
+  <h2>Summary</h2>
+  <p>
+    Data scientist skilled in statistical modeling, machine learning, and data storytelling.
+    Experienced in building predictive models, analyzing large datasets, and communicating insights
+    that drive business decisions. Passionate about solving real‑world problems with data.
+  </p>
+
+  <h2>Technical Skills</h2>
+  <div class="skills">
+    <span>Python</span>
+    <span>R</span>
+    <span>SQL</span>
+    <span>Machine Learning</span>
+    <span>Deep Learning</span>
+    <span>TensorFlow</span>
+    <span>PyTorch</span>
+    <span>Pandas</span>
+    <span>NumPy</span>
+    <span>Data Visualization</span>
+    <span>Tableau</span>
+    <span>Statistics</span>
+    <span>Big Data (Spark)</span>
+  </div>
+
+  <h2>Experience</h2>
+
+  <div class="experience-item">
+    <h3>Data Scientist – XYZ Analytics</h3>
+    <div class="meta">Atlanta, GA • 2024 – Present</div>
+    <ul>
+      <li>Built predictive models that improved customer retention forecasting accuracy by 22%.</li>
+      <li>Designed and deployed machine‑learning pipelines using Python, scikit‑learn, and AWS.</li>
+      <li>Created dashboards in Tableau used by leadership to guide quarterly strategy.</li>
+    </ul>
+  </div>
+
+  <div class="experience-item">
+    <h3>Data Science Intern – TechCorp</h3>
+    <div class="meta">Remote • 2023 – 2024</div>
+    <ul>
+      <li>Cleaned and analyzed 2M+ rows of customer behavior data using Python and SQL.</li>
+      <li>Developed a classification model that reduced false positives by 18%.</li>
+      <li>Presented insights to cross‑functional teams to support product decisions.</li>
+    </ul>
+  </div>
+
+  <h2>Projects</h2>
+  <div class="section">
+    <p><strong>Customer Churn Prediction</strong> — Built a machine‑learning model using Python and XGBoost to predict churn with 87% accuracy.</p>
+    <p><strong>Movie Recommendation System</strong> — Implemented collaborative filtering using Python and Surprise library.</p>
+    <p><strong>Real‑Time Sentiment Dashboard</strong> — Streamlit app analyzing live Twitter sentiment.</p>
+  </div>
+
+  <h2>Education</h2>
+  <p><strong>B.S. in Data Science</strong> — University of X (2020–2024)</p>
+  <p>Relevant coursework: Machine Learning, Statistics, Data Mining, Algorithms, Big Data Systems</p>
+
+  <h2>Awards</h2>
+  <div class="section">
+    <p><strong>Winner – Data Science Hackathon</strong> (2023)</p>
+    <p><strong>Dean’s List</strong> (2021–2024)</p>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Your Name — Data Scientist Resume Website
+</footer>
+
+<button id="topBtn">↑</button>
+
+<script>
+  const btn = document.getElementById("topBtn");
+
+  window.onscroll = () => {
+    if (document.documentElement.scrollTop > 200) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  btn.onclick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+</script>
+
+</body>
+</html>
