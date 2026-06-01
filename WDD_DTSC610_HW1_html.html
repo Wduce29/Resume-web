@@ -1,0 +1,792 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "toc_visible": true,
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Wduce29/Resume-web/blob/main/WDD_DTSC610_HW1_html.html\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "0qBu5ZpLkTPz"
+      },
+      "source": [
+        "# Homework 1: Data type, Variables, Loops and Control\n",
+        "\n",
+        "> Please complete this notebook below by filling in the cells provided. Note you need to save a copy in your own Colab to modify it:\n",
+        "before you start working, **SAVE A COPY (File --> Save a copy in Drive)** in your own Google Drive to modify the notebook.\n",
+        "\n",
+        "When you’re done:\n",
+        "\n",
+        "1. Select `Run All` from the `Cell` menu to ensure that you have executed all cells.\n",
+        "2. Select `Download .ipynb` from the `File` menu\n",
+        "3. Convert the downloaded ` .ipynb` file to ` .html` file (see instruction at end of this file)\n",
+        "4. Submit that downloaded ` .html` file to Canvas.\n",
+        "\n",
+        "\n",
+        "Reading:\n",
+        "- [1](https://inferentialthinking.com/chapters/04/Data_Types.html)\n",
+        "- [2](https://cuny.manifoldapp.org/read/how-to-code-in-python-3/section/3825856f-f9ca-4950-8ce8-5c77df982294#how-to-write-conditional-statements)\n",
+        "- [3](https://cuny.manifoldapp.org/read/how-to-code-in-python-3/section/f75bdda8-84fa-4972-bf76-747203948f55)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "2mBNHQI1AEga"
+      },
+      "source": [
+        "In a 2012 study conducted at MIT, researchers analyzed the differences between males and females applying to jobs at a mid-size high technology company. Out of the total 10,102 applicants, only 3,785 were female. Furthermore, only 177 females, compared to 626 males, applied for executive level positions. In the following exercises, you'll use your new coding skills to summarize this data with some statistics."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "id": "6OaMTbTMDv4l",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "6ad1a6f6-7984-4d6d-854f-ff831b686c82"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Total applicants: 10102\n",
+            "Total female applicants: 3785\n"
+          ]
+        }
+      ],
+      "source": [
+        "total_applicants = 10102\n",
+        "total_female_applicants = 3785\n",
+        "\n",
+        "print(\"Total applicants:\", total_applicants)\n",
+        "print(\"Total female applicants:\", total_female_applicants)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# using these variable names, calculate the total number of male applicants using subtraction\n",
+        "total_male_applicants = total_applicants - total_female_applicants\n",
+        "# assign this value to the variable total_male_applicants\n",
+        "# print this variable\n",
+        "print(\"Total male applicants:\" , total_male_applicants)\n"
+      ],
+      "metadata": {
+        "id": "bR6lO0IJgkog",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "6cdfafa1-74a8-40a7-da67-831fe32ebe67"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Total male applicants: 6317\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# calculate the percentage of total applicants that are male using division\n",
+        "percent_male_applicants = (total_applicants - total_female_applicants) / total_applicants\n",
+        "# assign this value to the variable percent_male_applicants\n",
+        "# print this variable\n",
+        "print(\"Percent male applicants:\" , percent_male_applicants)\n"
+      ],
+      "metadata": {
+        "id": "39DsFz2qgoy7",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "93bf26fb-5ea6-46a4-f6b4-157ba9a08559"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Percent male applicants: 0.6253217184715898\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# calculate the percentage of total applicants that were female using division\n",
+        "percent_female_applicants = total_female_applicants / total_applicants\n",
+        "# assign this value to the variable percent_female_applicants\n",
+        "# print this variable\n",
+        "print(\"Percent female applicants:\" , percent_female_applicants)"
+      ],
+      "metadata": {
+        "id": "AkWnlzHygsVE",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "9aa6c6b5-2f27-4f1a-f917-dac780e79754"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Percent female applicants: 0.3746782815284102\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "VXAz3pdWAQgm"
+      },
+      "source": [
+        "# Practice with Variables and Types\n",
+        "\n",
+        "As you've seen, one of the most basic ways to use Python is as a calculator. Let's step up our calculation game by using Python to solve a math problem.\n",
+        "\n",
+        "Let's say you opened up a savings account at your local bank and to start you deposited $100. While your money is in the bank it is *accruing interest* at a rate of 10 percent per year. Now, you want to know how much money you will have at the end of 7 years, assuming you never withdraw or deposit anything from your savings account. The formula for calculating this value is:\n",
+        "\n",
+        "<center>total = start_balance * ( 1 + interest_rate )<sup>years</sup></center>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "_qEZ_Vb9AQgq",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "0ca17667-dbda-47de-dffe-cb33bbc8d962"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Type of start_balance: <class 'int'>\n",
+            "Type of interest_rate: <class 'float'>\n"
+          ]
+        }
+      ],
+      "source": [
+        "# assign your deposit amount to the variable start_balance\n",
+        "start_balance = 100\n",
+        "# assign your interest rate to the variable interest_rate (TIP: How do we represent percentages in math?)\n",
+        "interest_rate =0.10\n",
+        "# print the types of both start_balance and interest_rate. Make sure they match what you expect\n",
+        "print(\"Type of start_balance:\" , type(start_balance))\n",
+        "print(\"Type of interest_rate:\" , type (interest_rate))"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "c-Od3EhdAQg6",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "6cfc69f2-7734-4f69-83ab-5def8e9b2a84"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Total savings after 7 years: 194.87171000000012\n",
+            "Type of total: <class 'float'>\n"
+          ]
+        }
+      ],
+      "source": [
+        "# assign the number of savings years to the variable years\n",
+        "years = 7\n",
+        "# calculate the result of your savings problem to the variable total.\n",
+        "# HINT 1: Remember your order of operations!\n",
+        "# HINT 2: Use Google for the Python exponent mathematical operator\n",
+        "# Google is your best friend in coding - don't be afraid to use it!\n",
+        "total = start_balance * (1 + interest_rate) ** years\n",
+        "# print the value of the total variable\n",
+        "print(\"Total savings after 7 years:\" , total)\n",
+        "# print the type of the total variable. Is this what we expect? Why?\n",
+        "print(\"Type of total:\" , type(total))"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "TbhQtMLaQsq0"
+      },
+      "source": [
+        "# Practice with loops\n",
+        "\n",
+        "In this practice, we will review:\n",
+        "- how to iterate through a list with a loop\n",
+        "- how to use the range function with loops\n",
+        "- how to create a nested loop\n",
+        "\n",
+        "As you have seen, loops give us the ability to loop through, or _iterate_ through, a list of items and perform the same action with each item in the list. A for loop follows this pattern:\n",
+        "\n",
+        "```\n",
+        "for [item] in [list]\n",
+        "  [do something with item]\n",
+        "```\n",
+        "\n",
+        "Some other things to remember before practicing:\n",
+        "- The `range` function gives you a list of numbers between two parameters. For example, `range(0,3)` would give you the list `[0,1,2]`. It is _inclusive_ of the first parameter, but _exclusive_ of the second parameter.\n",
+        "- You can put for loops inside each other, but it is __very__ important to make sure both loops have different variable names. For example, this is okay:\n",
+        "\n",
+        "```\n",
+        "for num1 in list_1:\n",
+        "  for num2 in list_2:\n",
+        "    print(num1 + num2)\n",
+        "```\n",
+        "\n",
+        "but this is not:\n",
+        "\n",
+        "```\n",
+        "for num in list_1:\n",
+        "  for num in list_2:\n",
+        "    print(num + num)\n",
+        "```\n",
+        "\n",
+        "The above code will probably run, but it won't give you the output you expect!\n",
+        "\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "WuJ7jvUeQsq5"
+      },
+      "outputs": [],
+      "source": [
+        "# create a list of planets\n",
+        "planets = ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', 'pluto']\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "XlL_LzksA1bj",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "2ea2788f-428f-4c17-dc29-b9c2acd540cf"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "mercury venus earth mars jupiter saturn uranus neptune pluto \n"
+          ]
+        }
+      ],
+      "source": [
+        "# create an empty string called planet_string (hint: an empty string is just opening & closing quotation marks)\n",
+        "\n",
+        "planet_string = \"\"\n",
+        "# use a for loop to add each planet's name to the string\n",
+        "# remember that each time we add a planet we also want to add a space\n",
+        "for planet in planets:\n",
+        "    planet_string += planet + \" \"\n",
+        "\n",
+        "# print the value of planet_string\n",
+        "print(planet_string)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "JFRtHQi0ubak"
+      },
+      "source": [
+        "First, let's create a string containing the names of all the planets. We want something that looks like this:\n",
+        "\n",
+        "\"mercury venus earth mars jupiter saturn uranus neptune pluto\"\n",
+        "\n",
+        "This can be done by creating an empty string, then adding the name of each planet using a for loop!"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "mxw8GADjuYnA"
+      },
+      "source": [
+        "First, let's create a string containing the names of all the planets. We want something that looks like this:\n",
+        "\n",
+        "\"mercury venus earth mars jupiter saturn uranus neptune pluto\"\n",
+        "\n",
+        "This can be done by creating an empty string, then adding the name of each planet using a for loop!"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "9FKe-A75O18-"
+      },
+      "source": [
+        "First, let's create a string containing the names of all the planets. We want something that looks like this:\n",
+        "\n",
+        "\"mercury venus earth mars jupiter saturn uranus neptune pluto\"\n",
+        "\n",
+        "This can be done by creating an empty string, then adding the name of each planet using a for loop!"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "LUrE_CSsPONK"
+      },
+      "source": [
+        "What if we wanted to create a string that only contained the planets further from the sun than Earth (these are the planets that come after Earth in our list)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "gGZ1NH-oBKYR",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "398dcd36-1939-4623-992c-42f2cbc7afa3"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "marsjupitersaturnuranusneptunepluto\n"
+          ]
+        }
+      ],
+      "source": [
+        "# create an empty string called after_earth\n",
+        "after_earth =  \"\"\n",
+        "\n",
+        "# create a list of planets (to ensure 'planets' is defined in this cell's scope)\n",
+        "planets = ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', 'pluto']\n",
+        "\n",
+        "# create a for loop similar to above, but only iterating over the planets after earth in the list\n",
+        "for i in range (3, len(planets)):after_earth += planets[i] + \"\"\n",
+        "# print the value of after_earth\n",
+        "print(after_earth)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "mIspkh83RZ5n"
+      },
+      "source": [
+        "# Practice with Controls\n",
+        "\n",
+        "We learned about a few ways to change the way our for loops work. As a reminder:\n",
+        "\n",
+        "- We can use `if/elif/else` statements in loops to specify what code runs for certain items in the list\n",
+        "- We can use `continue` to skip to the next item\n",
+        "- We can use `break` to stop iterating through items in our list"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "E5HR2YiNfxcC"
+      },
+      "source": [
+        "We will be working with a 2D list called `college_info`, which has information about different colleges in the country. Each list in the 2D list has the name, city, and state of a certain college"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "CUqi5OOURZ5s"
+      },
+      "outputs": [],
+      "source": [
+        "# college info:\n",
+        "college_info = [[\"University of Michigan\", \"Ann Arbor\", \"Michigan\"],\n",
+        "                [\"New York University\", \"New York\", \"New York\"],\n",
+        "                [\"Grand Valley State University\", \"Allendale\", \"Michigan\"],\n",
+        "                [\"Western Michigan University\",\"Kalamazoo\", \"Michigan\"],\n",
+        "                [\"University of Alaska\", \"Fairbanks\", \"Alaska\"],\n",
+        "                [\"University of Washington\", \"Seattle\", \"Washington\"],\n",
+        "                [\"Stanford University\", \"Stanford\", \"California\"]]"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ZcMdiuzZf9q3"
+      },
+      "source": [
+        "First, let's get familiar with our dataset. Write a for loop that iterates through the list of colleges and prints out all the info for each college"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "ZuVPvQ0QepJz",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "b6c44147-513a-4827-c0b7-23c12afe0099"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n"
+          ]
+        }
+      ],
+      "source": [
+        "# iterate through the list of colleges and print out the info for each college\n",
+        "college_info_string= \"\"\n",
+        "print(college_info_string)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "qElFDjybgawQ"
+      },
+      "source": [
+        "Next, let's print out just the names of each college. Remember, each item in our for loop is a list, and the name of the college is the first item in the list."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "CHQmeJT3et71",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "cab14ae0-e0df-48f8-8b3f-02cf609c9a7b"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "University of Michigan\n",
+            "New York University\n",
+            "Grand Valley State University\n",
+            "Western Michigan University\n",
+            "University of Alaska\n",
+            "University of Washington\n",
+            "Stanford University\n"
+          ]
+        }
+      ],
+      "source": [
+        "# iterate through the list of colleges and print out each college's name\n",
+        "for college in college_info:\n",
+        "    # college [0] = name, college [1] = city, college [2] = stste\n",
+        "    print(college[0])"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "98hwPB4Egm-Q"
+      },
+      "source": [
+        "We can see that some of the schools in our list are in Michigan, and some are not. Let's write a loop that prints \"X is an in-state school\" if a college is in the state of Michigan, and \"X is not an in-state school\" if a college is not in the state of Michigan."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "guXsIqA5ds0N",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "98b43cd0-8fe1-4f75-e744-ade561a4faa0"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "University of Michigan  - In Michigan\n",
+            "New York University Not in michigan\n",
+            "Grand Valley State University  - In Michigan\n",
+            "Western Michigan University  - In Michigan\n",
+            "University of Alaska Not in michigan\n",
+            "University of Washington Not in michigan\n",
+            "Stanford University Not in michigan\n"
+          ]
+        }
+      ],
+      "source": [
+        "# use if/else to do something different for schools in michigan vs. not in michigan\n",
+        "for college in college_info:\n",
+        "    if college[2] == \"Michigan\":\n",
+        "        print(college[0], \" - In Michigan\")\n",
+        "    else:\n",
+        "        print(college[0], \"Not in michigan\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "tExnZD0lg3ZR"
+      },
+      "source": [
+        "Remember that we can use `continue` to skip over certain items in our list. Write a for loop that uses `continue` to only print info about schools that are in Michigan.\n",
+        "\n",
+        "Note: this can also be done without using `continue`!"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "cr4bGfnqdwfq",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "f10cd7cf-cb8d-4e24-9106-26442fc07e62"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "University of Michigan - Ann Arbor , Michigan\n",
+            "Grand Valley State University - Allendale , Michigan\n",
+            "Western Michigan University - Kalamazoo , Michigan\n"
+          ]
+        }
+      ],
+      "source": [
+        "for college in college_info:\n",
+        "  if college[2] != \"Michigan\":\n",
+        "    continue\n",
+        "  print(college[0], \"-\", college[1], \",\", college[2])"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "pDweMcLzhVJ0"
+      },
+      "source": [
+        "The keyword `break` can be used to stop iterating through our list once a certain condition is met. Use `break` to only print out information about schools that are before University of Alaska in the list."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "0BxT5egA6e7L"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "zAClkg0PdzAT",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "131d8cce-65d5-47bb-c62a-ad9c4969ed0c"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "University of Michigan -\n",
+            "New York University -\n",
+            "Grand Valley State University -\n",
+            "Western Michigan University -\n",
+            "University of Alaska -\n",
+            "University of Washington -\n",
+            "Stanford University -\n"
+          ]
+        }
+      ],
+      "source": [
+        "# use break to print info only about schools that are before U of A in the list\n",
+        "for college in college_info:\n",
+        "  if college[0] == \"University of Alaske\":\n",
+        "    break\n",
+        "  print(college[0], \"-\"),\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "\n",
+        "# Convert this notebook into html file\n",
+        "\n",
+        "\n",
+        "1.   Click on **File** and then **Download** select **Download as .ipynb**. This will download the notebook file (in this case, DTSC610_HW1.ipynb) to your computer.\n",
+        "2.   Upload the downloaded .ipynb file (in this case, DTSC610_HW1.ipynb) back to Colab by Click on the **Upload** icon\n",
+        "3.   And run the cell below.\n",
+        "4.   Then you can click on the **Refresh** icon (next to **Upload** icon) to obtain the generated html file (in this case, DTSC610_HW1.html).\n",
+        "5.   Download the generated html file by click on the three vetical dots next ot the file name.\n",
+        "\n",
+        "More detailed instruction can be found on [Stackoverflow](https://stackoverflow.com/questions/53460051/convert-ipynb-notebook-to-html-in-google-colab).\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "s3_AaoKqtgi9"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%shell\n",
+        "NOTEBOOK_FILE=$(ls *.ipynb | head -n 1)\n",
+        "if [ -z \"$NOTEBOOK_FILE\" ]; then\n",
+        "    echo \"Error: No .ipynb file found in the current directory. Please make sure the notebook is saved and present.\"\n",
+        "else\n",
+        "    jupyter nbconvert --to html \"$NOTEBOOK_FILE\"\n",
+        "fi"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xRB9QkpStg9j",
+        "outputId": "06b3e344-74cb-4447-d031-12121ca9048a"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "ls: cannot access '*.ipynb': No such file or directory\n",
+            "Error: No .ipynb file found in the current directory. Please make sure the notebook is saved and present.\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": []
+          },
+          "metadata": {},
+          "execution_count": 5
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "68ef270d"
+      },
+      "source": [
+        "### Convert Notebook to HTML using Python\n",
+        "\n",
+        "This cell will programmatically convert your current notebook to an HTML file. The HTML file will be saved in the same directory as your notebook and you can download it from the Colab file browser."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "817c51cd",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "e0dd66d1-d57f-43b7-aa03-b043c7ca6c40"
+      },
+      "source": [
+        "import os\n",
+        "import nbformat\n",
+        "from nbconvert import HTMLExporter\n",
+        "\n",
+        "# Find the current notebook file\n",
+        "# Colab notebooks often have an 'Untitled' prefix if not explicitly saved\n",
+        "# We'll look for the first .ipynb file in the current directory\n",
+        "notebook_files = [f for f in os.listdir('.') if f.endswith('.ipynb')]\n",
+        "\n",
+        "if not notebook_files:\n",
+        "    print(\"Error: No .ipynb file found in the current directory. Please make sure the notebook is saved and present.\")\n",
+        "else:\n",
+        "    notebook_path = notebook_files[0]\n",
+        "    output_html_path = notebook_path.replace('.ipynb', '.html')\n",
+        "\n",
+        "    # Load the notebook\n",
+        "    with open(notebook_path, 'r', encoding='utf-8') as f:\n",
+        "        notebook_content = nbformat.read(f, as_version=4)\n",
+        "\n",
+        "    # Configure the HTML exporter\n",
+        "    html_exporter = HTMLExporter()\n",
+        "    html_exporter.template_name = 'classic'\n",
+        "\n",
+        "    # Convert the notebook to HTML\n",
+        "    (body, resources) = html_exporter.from_notebook_node(notebook_content)\n",
+        "\n",
+        "    # Save the HTML output to a file\n",
+        "    with open(output_html_path, 'w', encoding='utf-8') as f:\n",
+        "        f.write(body)\n",
+        "\n",
+        "    print(f\"Notebook '{notebook_path}' successfully converted to '{output_html_path}'\")\n",
+        "    print(\"You can find the HTML file in the Colab file browser (folder icon on the left).\")"
+      ],
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Error: No .ipynb file found in the current directory. Please make sure the notebook is saved and present.\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
